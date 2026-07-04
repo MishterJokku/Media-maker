@@ -14,15 +14,24 @@ Created by **Mishter_Jokku**.
 - Preview and adjust text size, position, outline, and color
 - Export as **MP4, GIF, PNG, JPG**
 - Chroma key option for MP4 overlays with green/black/white background
-- Works offline after installing dependencies
 
-## Install
+## For normal users
+
+Download the Windows portable ZIP from the release page, extract it, and open:
+
+```text
+Media Scene Maker.exe
+```
+
+No Python install is needed for normal users when using the EXE build.
+
+## Developer install
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Run
+## Run from source
 
 ```bash
 python media_scene_maker.py
@@ -33,6 +42,34 @@ On Windows, you can also double-click:
 ```text
 run_windows.bat
 ```
+
+## Build Windows EXE locally
+
+```text
+build_windows_exe.bat
+```
+
+The finished portable app will be created here:
+
+```text
+dist\Media Scene Maker\Media Scene Maker.exe
+```
+
+## Build Windows EXE on GitHub
+
+Go to:
+
+```text
+Actions -> Build Windows EXE -> Run workflow
+```
+
+After it finishes, download the artifact named:
+
+```text
+Media_Scene_Maker_Windows_Portable
+```
+
+Upload that ZIP to your GitHub release.
 
 ## Recommended folder setup
 
