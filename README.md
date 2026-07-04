@@ -1,32 +1,18 @@
-[GITHUB_RELEASE_BODY_v0.3.0.md](https://github.com/user-attachments/files/29654485/GITHUB_RELEASE_BODY_v0.3.0.md)
-# Media-maker# Media Scene Maker v0.3.0
+# Media Scene Maker
 
-## Highlights
+Offline desktop app for placing foreground media on backgrounds, adding a logo watermark, adding one text line per scene, and exporting the final result.
 
-This release adds a more flexible media workflow for creating final scene exports from any available assets.
+Created by **Mishter_Jokku**.
 
-## Supported imports
+## Features
 
-- Foreground/character: MP4, GIF, PNG, JPG
-- Backgrounds: MP4, GIF, PNG, JPG
-- Logo/watermark: single image/video file or a folder of logo files
-
-## Supported exports
-
-- MP4
-- GIF
-- PNG
-- JPG
-
-## Main features
-
-- Add a character/foreground over many backgrounds
-- Add a logo watermark
-- Add different text for each background using line-by-line text input
-- Choose custom fonts with preview support
-- Adjust text size, position, color, outline, and shadow
-- Adjust foreground scale and position
-- Use Chroma Key for MP4 overlays with solid-color backgrounds
+- Foreground import: MP4, GIF, PNG, JPG
+- Background import: MP4, GIF, PNG, JPG
+- Logo/watermark support
+- One word or phrase per background
+- Custom font picker with preview
+- Export: MP4, GIF, PNG, JPG
+- Chroma key option for solid-color MP4 overlays
 
 ## Install
 
@@ -40,6 +26,20 @@ pip install -r requirements.txt
 python media_scene_maker.py
 ```
 
+Windows users can double-click `run_windows.bat`.
+
+## Text per background
+
+Example:
+
+```text
+Studying mode
+Moon work shift
+Gaming break
+```
+
+The app maps line 1 to background 1, line 2 to background 2, and so on.
+
 ## Notes
 
-MP4 transparency is not supported in normal MP4 files. For transparent characters, use GIF/PNG whenever possible. If the foreground MP4 has green/black/white background, use Chroma Key.
+Normal MP4 files do not keep alpha transparency. For transparent overlays, use GIF or PNG when possible. For MP4 with a solid color background, use Chroma Key.
