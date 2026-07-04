@@ -1,18 +1,20 @@
 # Media Scene Maker
 
-Offline desktop app for placing foreground media on backgrounds, adding a logo watermark, adding one text line per scene, and exporting the final result.
+Offline desktop app for adding transparent GIFs/images/videos on top of different backgrounds, with optional logo watermark and different text for each scene.
 
 Created by **Mishter_Jokku**.
 
 ## Features
 
-- Foreground import: MP4, GIF, PNG, JPG
-- Background import: MP4, GIF, PNG, JPG
-- Logo/watermark support
-- One word or phrase per background
-- Custom font picker with preview
-- Export: MP4, GIF, PNG, JPG
-- Chroma key option for solid-color MP4 overlays
+- Import foreground/character as **MP4, GIF, PNG, JPG**
+- Import backgrounds as **MP4, GIF, PNG, JPG**
+- Add logo/watermark from one file or a logo folder
+- Add many words/phrases: one line of text can match one background
+- Choose custom font `.ttf` / `.otf`
+- Preview and adjust text size, position, outline, and color
+- Export as **MP4, GIF, PNG, JPG**
+- Chroma key option for MP4 overlays with green/black/white background
+- Works offline after installing dependencies
 
 ## Install
 
@@ -26,11 +28,31 @@ pip install -r requirements.txt
 python media_scene_maker.py
 ```
 
-Windows users can double-click `run_windows.bat`.
+On Windows, you can also double-click:
 
-## Text per background
+```text
+run_windows.bat
+```
 
-Example:
+## Recommended folder setup
+
+```text
+project/
+  media_scene_maker.py
+  foreground/
+    character.gif
+  backgrounds/
+    classroom.png
+    moon_workplace.png
+    gaming_room.mp4
+  logos/
+    watermark.png
+  exports/
+```
+
+## Text-per-background workflow
+
+Paste your words in the text box line by line:
 
 ```text
 Studying mode
@@ -38,8 +60,17 @@ Moon work shift
 Gaming break
 ```
 
-The app maps line 1 to background 1, line 2 to background 2, and so on.
+The app will use:
 
-## Notes
+```text
+1st background -> Studying mode
+2nd background -> Moon work shift
+3rd background -> Gaming break
+```
 
-Normal MP4 files do not keep alpha transparency. For transparent overlays, use GIF or PNG when possible. For MP4 with a solid color background, use Chroma Key.
+## Important notes
+
+- Normal MP4 files do **not** preserve transparency.
+- Use transparent GIF/PNG for best overlay quality.
+- For MP4 overlays, use the Chroma Key option if the video has a solid green, black, or white background.
+- PNG/JPG export saves the first frame only.
